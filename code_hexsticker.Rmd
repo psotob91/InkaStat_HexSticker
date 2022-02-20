@@ -1,0 +1,185 @@
+---
+title: "INKASTATS hexsticker"
+output:
+  pdf_document: default
+  html_document:
+    df_print: paged
+---
+
+```{r setup, include = FALSE}
+
+if (!require("pacman")) {install.packages("pacman")}
+
+library(pacman)
+
+p_unload() # Unloading all package except base
+
+p_load(
+  tidyverse, hexSticker, sysfonts, showtext, png, grid, patchwork, ggpubr
+)
+
+# Other examples: 
+# https://github.com/GuangchuangYu/hexSticker 
+# UVic logo
+# https://www.uvic.ca/brand/look-feel/logo/index.php 
+# UVic colour
+# https://www.uvic.ca/brand/look-feel/colour/palette/index.php
+```
+
+## Fonts & colours
+
+```{r}
+## Loading Google fonts (http://www.google.com/fonts)
+font_add_google("Poiret One", "poiret")
+font_add_google("Raleway", "raleway")
+font_add_google("Roboto Slab", "roboto_slab")
+font_add_google("Gochi Hand", "gochi")
+
+## loading local font 
+font_add(family = "broadway", regular = "BROADW.TTF")
+
+font_add("trebuchet",
+         regular="C:\\Windows\\Fonts\\trebuc.ttf")
+
+font_add("gill",
+         regular="C:\\Windows\\Fonts\\GILSANUB.TTF")
+
+## Automatically use showtext to render text for future devices
+showtext_auto()
+```
+
+### Colours
+
+```{r}
+uvic_blue      <- "#005493"    #RGB: 0-84-147
+uvic_yellow    <- "#F5AA1C"    #RGB: 245-170-28  
+uvic_red       <- "#C63527"    #RGB: 198-53-39
+uvic_blue_dark <- "#002754"  #RGB: 0-39-84
+uvic_white     <- "#ffffff" #RGB: 255-255-255
+uvic_golden    <- "#eecd24" #RGB: 238-205-36
+uvic_black     <- "#000000" #RGB: 0-0-0
+uvic_borde     <- "#5b5b5b"
+uvic_borde2    <- "#424242"
+borde3         <- "#20324B"
+borde4         <- "#363636"
+uvic_fondo     <- "#d6d6d6"
+url_color      <- uvic_yellow
+```
+
+## Quipu with ggplot background
+
+```{r eval=FALSE}
+#Importar quipu y guardarlo como objeto raster
+quipu <- readPNG("Images_Quipu/quipu_fn.png")
+
+quipu_raster <- rasterGrob(     #Para agregar el quipu solo
+  quipu, 
+  width = 0.7,
+  height = 0.5, 
+  x = 0.5, 
+  y = 0.6,
+  interpolate = T)
+```
+
+```{r}
+# Crear data simulada para fondo
+xpos <- 1:5
+ypos <- xpos**2
+  
+data_frame = data.frame(xpos = xpos,
+                        ypos = ypos)
+  
+print("Data points")
+print(data_frame)
+```
+
+```{r}
+# Crear fondo, traslaparlo con quipu y guardarlo como objeto ggplo2
+qplot(xpos, ypos, geom = "blank") + 
+  annotation_custom(quipu_raster, 
+                    xmin = -Inf, 
+                    xmax = Inf, 
+                    ymin = -Inf, 
+                    ymax = Inf) + 
+  # theme(panel.background = element_rect(fill = "#d6d6d6"))
+  theme_gray() -> gg2
+
+plot(gg2)
+```
+
+```{r}
+quipu_raster2 <- rasterGrob(
+  quipu, 
+  width = 0.65,
+  height = 0.65, 
+  x = 0.5, 
+  y = 0.6,
+  interpolate = T)
+
+qplot(xpos, ypos, geom = "blank") + 
+  annotation_custom(quipu_raster2, 
+                    xmin = -Inf, 
+                    xmax = Inf, 
+                    ymin = -Inf, 
+                    ymax = Inf) + 
+  theme_gray() -> gg3
+
+plot(gg3)
+```
+
+```{r}
+Logo_hex <- hexSticker::sticker(
+    ##Opciones de la imagen
+    subplot              = gg2, #la imagen que usaremos
+    #s_x                  = 1.00, s_y = 1.25, #posición relativa x e y de la imagen, 1=centro
+    #s_width              = 1.55, #ancho de la imagen
+    #s_height             = 1.52, #alto de la imagen
+    
+    s_x                  = 0.90, 
+    s_y                  = 1.00, #posición relativa x e y de la imagen, 1=centro
+    s_width              = 2.5, #ancho de la imagen
+    s_height             = 2.5, #alto de la imagen
+
+    ##Opciones para el título
+    package              = "InkaStats", #el nombre del logo
+    p_size               = 40, #Tamaño de la fuente
+    p_family             = "roboto_slab", #define fuente de letra
+    p_color              = uvic_black, #para color de fuente
+    p_x                  = 1, p_y = 0.6, #para posición del título
+    
+    ##Opciones generales
+    # filename           = "Logo2 .png", #fichero de salida
+    dpi                  = 600, #Resolución
+    
+    ##Opciones del spotlight
+    spotlight            = F, #agregar un brillo como reflector 
+    l_x                  = 1, #posición relativa
+    l_y                  = 1.2, #posición relativa
+    l_alpha              = 0.1, #Transparencia del spotlight
+    l_width              = 5, #Amplitud del spotlight
+    
+    ##Fondo y borde
+    h_fill               = uvic_fondo, #color de fondo
+    h_color              = borde3, #color de borde del hex
+    h_size               = 1.2, #ancho de borde
+    white_around_sticker = T, #recortar el borde exterior del hex
+    
+    ##Opciones de la URL
+    url                  = "Data Science Solutions SAC", #lo que irá abajo          
+    u_color              = uvic_black, #color de fuente
+    u_size               = 7, #tamaño de fuente
+    u_angle              = 30, #Ángulo de la URL
+    u_x                  = 1, 
+    u_y                  = 0.05, 
+    u_family             = "roboto_slab"
+  )  
+
+save_sticker("Logo4.png", 
+             Logo_hex, 
+             dpi         = 600)
+
+#Posición de la URL. Pos1: ang=30 x=0.3 y=1.5, Pos2: ang=-30 x=1.25 y=1.75, Pos3: ang=-90 x=0.2 y=1.45, Pos4: ang=90 x=1.8 y=0.85, Pos5: ang=-30 x=0.5 y=0.35 Pos6: x=1 y=0.1
+
+plot(Logo_hex)
+```
+
