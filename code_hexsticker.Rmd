@@ -8,6 +8,9 @@ output:
 
 ```{r setup, include = FALSE}
 
+rm(list = ls(all.names = TRUE))
+gc()
+
 if (!require("pacman")) {install.packages("pacman")}
 
 library(pacman)
@@ -68,7 +71,7 @@ url_color      <- uvic_yellow
 
 ## Quipu with ggplot background
 
-```{r eval=FALSE}
+```{r}
 #Importar quipu y guardarlo como objeto raster
 quipu <- readPNG("Images_Quipu/quipu_fn.png")
 
@@ -101,36 +104,23 @@ qplot(xpos, ypos, geom = "blank") +
                     xmax = Inf, 
                     ymin = -Inf, 
                     ymax = Inf) + 
-  # theme(panel.background = element_rect(fill = "#d6d6d6"))
-  theme_gray() -> gg2
-
-plot(gg2)
+  scale_x_continuous(breaks = seq(1, 5, by = 1), minor_breaks = NULL) +
+  scale_y_continuous(breaks = seq(0, 25, by = 5), minor_breaks = NULL) +
+  theme(panel.background = element_rect(fill = "#EBEBEB")) -> gg
+  #theme_gray() -> gg2
+  #theme_light() -> gg2
 ```
 
 ```{r}
-quipu_raster2 <- rasterGrob(
-  quipu, 
-  width = 0.65,
-  height = 0.65, 
-  x = 0.5, 
-  y = 0.6,
-  interpolate = T)
-
-qplot(xpos, ypos, geom = "blank") + 
-  annotation_custom(quipu_raster2, 
-                    xmin = -Inf, 
-                    xmax = Inf, 
-                    ymin = -Inf, 
-                    ymax = Inf) + 
-  theme_gray() -> gg3
-
-plot(gg3)
+plot(gg)
 ```
+
+## Logo
 
 ```{r}
 Logo_hex <- hexSticker::sticker(
     ##Opciones de la imagen
-    subplot              = gg2, #la imagen que usaremos
+    subplot              = gg, #la imagen que usaremos
     #s_x                  = 1.00, s_y = 1.25, #posición relativa x e y de la imagen, 1=centro
     #s_width              = 1.55, #ancho de la imagen
     #s_height             = 1.52, #alto de la imagen
@@ -171,15 +161,22 @@ Logo_hex <- hexSticker::sticker(
     u_angle              = 30, #Ángulo de la URL
     u_x                  = 1, 
     u_y                  = 0.05, 
-    u_family             = "roboto_slab"
+    u_family             = "roboto_slab", 
+    
+    # Save file
+    filename             = "Images_Quipu/Logo_InkaStats.png"
+    
   )  
 
-save_sticker("Logo4.png", 
-             Logo_hex, 
-             dpi         = 600)
+# save_sticker("Logo_InkaStats.png", 
+#              Logo_hex, 
+#              dpi         = 600)
 
 #Posición de la URL. Pos1: ang=30 x=0.3 y=1.5, Pos2: ang=-30 x=1.25 y=1.75, Pos3: ang=-90 x=0.2 y=1.45, Pos4: ang=90 x=1.8 y=0.85, Pos5: ang=-30 x=0.5 y=0.35 Pos6: x=1 y=0.1
+```
 
+```{r}
 plot(Logo_hex)
 ```
+
 
