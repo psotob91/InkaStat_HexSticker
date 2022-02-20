@@ -69,11 +69,13 @@ uvic_fondo     <- "#d6d6d6"
 url_color      <- uvic_yellow
 ```
 
+
+
 ## Quipu with ggplot background
 
 ```{r}
 #Importar quipu y guardarlo como objeto raster
-quipu <- readPNG("Images_Quipu/quipu_fn.png")
+quipu <- readPNG("../images_sources/quipu_fn.png")
 
 quipu_raster <- rasterGrob(     #Para agregar el quipu solo
   quipu, 
@@ -115,7 +117,7 @@ qplot(xpos, ypos, geom = "blank") +
 plot(gg)
 ```
 
-## Logo
+## Official Logo
 
 ```{r}
 Logo_hex <- hexSticker::sticker(
@@ -164,7 +166,7 @@ Logo_hex <- hexSticker::sticker(
     u_family             = "roboto_slab", 
     
     # Save file
-    filename             = "Images_Quipu/Logo_InkaStats.png"
+    filename             = "../stickers_png/logo-inkastats-official.png"
     
   )  
 
@@ -173,10 +175,81 @@ Logo_hex <- hexSticker::sticker(
 #              dpi         = 600)
 
 #Posición de la URL. Pos1: ang=30 x=0.3 y=1.5, Pos2: ang=-30 x=1.25 y=1.75, Pos3: ang=-90 x=0.2 y=1.45, Pos4: ang=90 x=1.8 y=0.85, Pos5: ang=-30 x=0.5 y=0.35 Pos6: x=1 y=0.1
-```
 
-```{r}
 plot(Logo_hex)
 ```
 
+## Other Unofficial Logo
 
+```{r}
+# Crear fondo, traslaparlo con quipu y guardarlo como objeto ggplo2
+qplot(xpos, ypos, geom = "blank") + 
+  annotation_custom(quipu_raster, 
+                    xmin = -Inf, 
+                    xmax = Inf, 
+                    ymin = -Inf, 
+                    ymax = Inf) + 
+  scale_x_continuous(breaks = seq(1, 5, by = 1), minor_breaks = NULL) +
+  scale_y_continuous(breaks = seq(0, 25, by = 5), minor_breaks = NULL) +
+  #theme(panel.background = element_rect(fill = "#EBEBEB")) -> gg
+  #theme_gray() -> gg2
+  theme_light() -> gg2
+  
+Logo_hex2 <- hexSticker::sticker(
+    ##Opciones de la imagen
+    subplot              = gg2, #la imagen que usaremos
+    #s_x                  = 1.00, s_y = 1.25, #posición relativa x e y de la imagen, 1=centro
+    #s_width              = 1.55, #ancho de la imagen
+    #s_height             = 1.52, #alto de la imagen
+    
+    s_x                  = 0.90, 
+    s_y                  = 1.00, #posición relativa x e y de la imagen, 1=centro
+    s_width              = 2.5, #ancho de la imagen
+    s_height             = 2.5, #alto de la imagen
+
+    ##Opciones para el título
+    package              = "InkaStats", #el nombre del logo
+    p_size               = 40, #Tamaño de la fuente
+    p_family             = "roboto_slab", #define fuente de letra
+    p_color              = uvic_black, #para color de fuente
+    p_x                  = 1, p_y = 0.6, #para posición del título
+    
+    ##Opciones generales
+    # filename           = "Logo2 .png", #fichero de salida
+    dpi                  = 600, #Resolución
+    
+    ##Opciones del spotlight
+    spotlight            = F, #agregar un brillo como reflector 
+    l_x                  = 1, #posición relativa
+    l_y                  = 1.2, #posición relativa
+    l_alpha              = 0.1, #Transparencia del spotlight
+    l_width              = 5, #Amplitud del spotlight
+    
+    ##Fondo y borde
+    h_fill               = uvic_fondo, #color de fondo
+    h_color              = borde3, #color de borde del hex
+    h_size               = 1.2, #ancho de borde
+    white_around_sticker = T, #recortar el borde exterior del hex
+    
+    ##Opciones de la URL
+    url                  = "Data Science Solutions SAC", #lo que irá abajo          
+    u_color              = uvic_black, #color de fuente
+    u_size               = 7, #tamaño de fuente
+    u_angle              = 30, #Ángulo de la URL
+    u_x                  = 1, 
+    u_y                  = 0.05, 
+    u_family             = "roboto_slab", 
+    
+    # Save file
+    filename             = "../stickers_png/logo-inkastats-other.png"
+    
+  )  
+
+# save_sticker("Logo_InkaStats.png", 
+#              Logo_hex, 
+#              dpi         = 600)
+
+#Posición de la URL. Pos1: ang=30 x=0.3 y=1.5, Pos2: ang=-30 x=1.25 y=1.75, Pos3: ang=-90 x=0.2 y=1.45, Pos4: ang=90 x=1.8 y=0.85, Pos5: ang=-30 x=0.5 y=0.35 Pos6: x=1 y=0.1
+
+plot(Logo_hex2)
+```
