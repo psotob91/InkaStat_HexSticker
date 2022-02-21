@@ -1,13 +1,9 @@
 ---
 title: "INKASTATS hexsticker"
-output:
-  pdf_document: default
-  html_document:
-    df_print: paged
+output: html_document
 ---
 
 ```{r setup, include = FALSE}
-
 rm(list = ls(all.names = TRUE))
 gc()
 
@@ -18,8 +14,17 @@ library(pacman)
 p_unload() # Unloading all package except base
 
 p_load(
-  tidyverse, hexSticker, sysfonts, showtext, png, grid, patchwork, ggpubr
+  tidyverse, 
+  hexSticker, 
+  sysfonts, 
+  showtext, 
+  png, 
+  grid, 
+  patchwork, 
+  ggpubr, 
+  magick
 )
+
 
 # Other examples: 
 # https://github.com/GuangchuangYu/hexSticker 
@@ -29,7 +34,7 @@ p_load(
 # https://www.uvic.ca/brand/look-feel/colour/palette/index.php
 ```
 
-## Fonts & colours
+## Configurar formato de letras
 
 ```{r}
 ## Loading Google fonts (http://www.google.com/fonts)
@@ -51,7 +56,7 @@ font_add("gill",
 showtext_auto()
 ```
 
-### Colours
+### Configurar colores
 
 ```{r}
 uvic_blue      <- "#005493"    #RGB: 0-84-147
@@ -69,9 +74,7 @@ uvic_fondo     <- "#d6d6d6"
 url_color      <- uvic_yellow
 ```
 
-
-
-## Quipu with ggplot background
+## Quipu con fondo de aestethic de ggplot2
 
 ```{r}
 #Importar quipu y guardarlo como objeto raster
@@ -117,7 +120,7 @@ qplot(xpos, ypos, geom = "blank") +
 plot(gg)
 ```
 
-## Official Logo
+## Logo oficial
 
 ```{r}
 Logo_hex <- hexSticker::sticker(
@@ -179,7 +182,25 @@ Logo_hex <- hexSticker::sticker(
 plot(Logo_hex)
 ```
 
-## Other Unofficial Logo
+## Logo oficial - fondo transparente
+
+```{r}
+# Extrayendo fondo
+logo <- image_read("../stickers_png/logo-inkastats-official.png")
+
+logo %>% 
+  image_transparent('white') %>% 
+  image_write("../stickers_png/logo-inkastats-official-transparent.png", "png")
+```
+
+```{r}
+plot(logo)
+```
+
+
+## Logos no oficiales
+
+### Con fondo theme_light
 
 ```{r}
 # Crear fondo, traslaparlo con quipu y guardarlo como objeto ggplo2
@@ -241,7 +262,7 @@ Logo_hex2 <- hexSticker::sticker(
     u_family             = "roboto_slab", 
     
     # Save file
-    filename             = "../stickers_png/logo-inkastats-other.png"
+    filename             = "../stickers_png/logo-inkastats-noofficial-other.png"
     
   )  
 
@@ -252,4 +273,108 @@ Logo_hex2 <- hexSticker::sticker(
 #Posición de la URL. Pos1: ang=30 x=0.3 y=1.5, Pos2: ang=-30 x=1.25 y=1.75, Pos3: ang=-90 x=0.2 y=1.45, Pos4: ang=90 x=1.8 y=0.85, Pos5: ang=-30 x=0.5 y=0.35 Pos6: x=1 y=0.1
 
 plot(Logo_hex2)
+```
+
+### Con efectos
+
+#### Efecto Charcoal
+
+```{r}
+logo %>% 
+  image_charcoal() %>% 
+  image_write("../stickers_png/logo-inkastats-noofficial-charcoal.png", "png")
+
+logo %>% 
+  image_charcoal() %>% 
+  plot
+```
+
+#### Efecto Implode
+
+```{r}
+logo %>% 
+  image_implode() %>% 
+  image_write("../stickers_png/logo-inkastats-noofficial-implode.png", "png") 
+
+logo %>% 
+  image_implode() %>% 
+  plot()
+```
+
+#### Efecto Oilpaint
+
+```{r}
+logo %>% 
+  image_oilpaint() %>% 
+  image_write("../stickers_png/logo-inkastats-noofficial-oilpaint.png", "png")
+
+logo %>% 
+  image_oilpaint() %>% 
+  plot()
+```
+
+#### Efecto Edge
+
+```{r}
+logo %>% 
+  image_edge() %>% 
+  image_write("../stickers_png/logo-inkastats-noofficial-edge.png", "png")
+
+logo %>% 
+  image_edge() %>% 
+  plot()
+```
+
+### Gift animados
+
+#### Animación 1
+
+```{r}
+logo1 <- image_read("../stickers_png/logo-inkastats-noofficial-charcoal.png")
+logo2 <- image_read("../stickers_png/logo-inkastats-noofficial-oilpaint.png")
+logos <- c(logo1, logo2)
+
+animation1 <- image_animate(logos, fps = 4) 
+
+animation1 %>% 
+  image_write("../gifs/logo-charcoal-oilpaint.gif")
+```
+
+```{r}
+animation1 
+```
+
+#### Animación 2
+
+```{r}
+logo1 <- image_read("../stickers_png/logo-inkastats-noofficial-other.png")
+logo2 <- image_read("../stickers_png/logo-inkastats-official.png")
+logos <- c(logo1, logo2)
+
+animation2 <- image_animate(logos, fps = 4) 
+
+animation2 %>% 
+  image_write("../gifs/logo-official-nonofficial.gif")
+```
+
+```{r}
+animation2
+```
+
+#### Animación 3
+
+```{r}
+logo1 <- image_read("../stickers_png/logo-inkastats-noofficial-other.png")
+logo2 <- image_read("../stickers_png/logo-inkastats-noofficial-oilpaint.png")
+logo3 <- image_read("../stickers_png/logo-inkastats-official.png")
+logos <- c(logo1, logo2, logo3)
+
+animation3 <- image_animate(logos, fps = 4)
+
+animation3 %>% 
+  image_write("../gifs/logo-official-oilpaint-nonofficial.gif")
+```
+
+```{r}
+animation3
 ```

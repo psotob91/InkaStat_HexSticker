@@ -1,0 +1,498 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+]{article}
+\usepackage{amsmath,amssymb}
+\usepackage{lmodern}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\hypersetup{
+  pdftitle={INKASTATS hexsticker},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+\urlstyle{same} % disable monospaced font for URLs
+\usepackage[margin=1in]{geometry}
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.77,0.63,0.00}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+
+\title{INKASTATS hexsticker}
+\author{}
+\date{\vspace{-2.5em}}
+
+\begin{document}
+\maketitle
+
+\hypertarget{configurar-formato-de-letras}{%
+\subsection{Configurar formato de
+letras}\label{configurar-formato-de-letras}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DocumentationTok{\#\# Loading Google fonts (http://www.google.com/fonts)}
+\FunctionTok{font\_add\_google}\NormalTok{(}\StringTok{"Poiret One"}\NormalTok{, }\StringTok{"poiret"}\NormalTok{)}
+\FunctionTok{font\_add\_google}\NormalTok{(}\StringTok{"Raleway"}\NormalTok{, }\StringTok{"raleway"}\NormalTok{)}
+\FunctionTok{font\_add\_google}\NormalTok{(}\StringTok{"Roboto Slab"}\NormalTok{, }\StringTok{"roboto\_slab"}\NormalTok{)}
+\FunctionTok{font\_add\_google}\NormalTok{(}\StringTok{"Gochi Hand"}\NormalTok{, }\StringTok{"gochi"}\NormalTok{)}
+
+\DocumentationTok{\#\# loading local font }
+\FunctionTok{font\_add}\NormalTok{(}\AttributeTok{family =} \StringTok{"broadway"}\NormalTok{, }\AttributeTok{regular =} \StringTok{"BROADW.TTF"}\NormalTok{)}
+
+\FunctionTok{font\_add}\NormalTok{(}\StringTok{"trebuchet"}\NormalTok{,}
+         \AttributeTok{regular=}\StringTok{"C:}\SpecialCharTok{\textbackslash{}\textbackslash{}}\StringTok{Windows}\SpecialCharTok{\textbackslash{}\textbackslash{}}\StringTok{Fonts}\SpecialCharTok{\textbackslash{}\textbackslash{}}\StringTok{trebuc.ttf"}\NormalTok{)}
+
+\FunctionTok{font\_add}\NormalTok{(}\StringTok{"gill"}\NormalTok{,}
+         \AttributeTok{regular=}\StringTok{"C:}\SpecialCharTok{\textbackslash{}\textbackslash{}}\StringTok{Windows}\SpecialCharTok{\textbackslash{}\textbackslash{}}\StringTok{Fonts}\SpecialCharTok{\textbackslash{}\textbackslash{}}\StringTok{GILSANUB.TTF"}\NormalTok{)}
+
+\DocumentationTok{\#\# Automatically use showtext to render text for future devices}
+\FunctionTok{showtext\_auto}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{configurar-colores}{%
+\subsubsection{configurar colores}\label{configurar-colores}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{uvic\_blue      }\OtherTok{\textless{}{-}} \StringTok{"\#005493"}    \CommentTok{\#RGB: 0{-}84{-}147}
+\NormalTok{uvic\_yellow    }\OtherTok{\textless{}{-}} \StringTok{"\#F5AA1C"}    \CommentTok{\#RGB: 245{-}170{-}28  }
+\NormalTok{uvic\_red       }\OtherTok{\textless{}{-}} \StringTok{"\#C63527"}    \CommentTok{\#RGB: 198{-}53{-}39}
+\NormalTok{uvic\_blue\_dark }\OtherTok{\textless{}{-}} \StringTok{"\#002754"}  \CommentTok{\#RGB: 0{-}39{-}84}
+\NormalTok{uvic\_white     }\OtherTok{\textless{}{-}} \StringTok{"\#ffffff"} \CommentTok{\#RGB: 255{-}255{-}255}
+\NormalTok{uvic\_golden    }\OtherTok{\textless{}{-}} \StringTok{"\#eecd24"} \CommentTok{\#RGB: 238{-}205{-}36}
+\NormalTok{uvic\_black     }\OtherTok{\textless{}{-}} \StringTok{"\#000000"} \CommentTok{\#RGB: 0{-}0{-}0}
+\NormalTok{uvic\_borde     }\OtherTok{\textless{}{-}} \StringTok{"\#5b5b5b"}
+\NormalTok{uvic\_borde2    }\OtherTok{\textless{}{-}} \StringTok{"\#424242"}
+\NormalTok{borde3         }\OtherTok{\textless{}{-}} \StringTok{"\#20324B"}
+\NormalTok{borde4         }\OtherTok{\textless{}{-}} \StringTok{"\#363636"}
+\NormalTok{uvic\_fondo     }\OtherTok{\textless{}{-}} \StringTok{"\#d6d6d6"}
+\NormalTok{url\_color      }\OtherTok{\textless{}{-}}\NormalTok{ uvic\_yellow}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{quipu-con-fondo-de-aestethic-de-ggplot2}{%
+\subsection{Quipu con fondo de aestethic de
+ggplot2}\label{quipu-con-fondo-de-aestethic-de-ggplot2}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#Importar quipu y guardarlo como objeto raster}
+\NormalTok{quipu }\OtherTok{\textless{}{-}} \FunctionTok{readPNG}\NormalTok{(}\StringTok{"../images\_sources/quipu\_fn.png"}\NormalTok{)}
+
+\NormalTok{quipu\_raster }\OtherTok{\textless{}{-}} \FunctionTok{rasterGrob}\NormalTok{(     }\CommentTok{\#Para agregar el quipu solo}
+\NormalTok{  quipu, }
+  \AttributeTok{width =} \FloatTok{0.7}\NormalTok{,}
+  \AttributeTok{height =} \FloatTok{0.5}\NormalTok{, }
+  \AttributeTok{x =} \FloatTok{0.5}\NormalTok{, }
+  \AttributeTok{y =} \FloatTok{0.6}\NormalTok{,}
+  \AttributeTok{interpolate =}\NormalTok{ T)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Crear data simulada para fondo}
+\NormalTok{xpos }\OtherTok{\textless{}{-}} \DecValTok{1}\SpecialCharTok{:}\DecValTok{5}
+\NormalTok{ypos }\OtherTok{\textless{}{-}}\NormalTok{ xpos}\SpecialCharTok{**}\DecValTok{2}
+  
+\NormalTok{data\_frame }\OtherTok{=} \FunctionTok{data.frame}\NormalTok{(}\AttributeTok{xpos =}\NormalTok{ xpos,}
+                        \AttributeTok{ypos =}\NormalTok{ ypos)}
+  
+\FunctionTok{print}\NormalTok{(}\StringTok{"Data points"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "Data points"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{print}\NormalTok{(data\_frame)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##   xpos ypos
+## 1    1    1
+## 2    2    4
+## 3    3    9
+## 4    4   16
+## 5    5   25
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Crear fondo, traslaparlo con quipu y guardarlo como objeto ggplo2}
+\FunctionTok{qplot}\NormalTok{(xpos, ypos, }\AttributeTok{geom =} \StringTok{"blank"}\NormalTok{) }\SpecialCharTok{+} 
+  \FunctionTok{annotation\_custom}\NormalTok{(quipu\_raster, }
+                    \AttributeTok{xmin =} \SpecialCharTok{{-}}\ConstantTok{Inf}\NormalTok{, }
+                    \AttributeTok{xmax =} \ConstantTok{Inf}\NormalTok{, }
+                    \AttributeTok{ymin =} \SpecialCharTok{{-}}\ConstantTok{Inf}\NormalTok{, }
+                    \AttributeTok{ymax =} \ConstantTok{Inf}\NormalTok{) }\SpecialCharTok{+} 
+  \FunctionTok{scale\_x\_continuous}\NormalTok{(}\AttributeTok{breaks =} \FunctionTok{seq}\NormalTok{(}\DecValTok{1}\NormalTok{, }\DecValTok{5}\NormalTok{, }\AttributeTok{by =} \DecValTok{1}\NormalTok{), }\AttributeTok{minor\_breaks =} \ConstantTok{NULL}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{scale\_y\_continuous}\NormalTok{(}\AttributeTok{breaks =} \FunctionTok{seq}\NormalTok{(}\DecValTok{0}\NormalTok{, }\DecValTok{25}\NormalTok{, }\AttributeTok{by =} \DecValTok{5}\NormalTok{), }\AttributeTok{minor\_breaks =} \ConstantTok{NULL}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{theme}\NormalTok{(}\AttributeTok{panel.background =} \FunctionTok{element\_rect}\NormalTok{(}\AttributeTok{fill =} \StringTok{"\#EBEBEB"}\NormalTok{)) }\OtherTok{{-}\textgreater{}}\NormalTok{ gg}
+  \CommentTok{\#theme\_gray() {-}\textgreater{} gg2}
+  \CommentTok{\#theme\_light() {-}\textgreater{} gg2}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{plot}\NormalTok{(gg)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{code_hexsticker_files/figure-latex/unnamed-chunk-6-1.pdf}
+
+\hypertarget{logo-oficial---fondo-blanco}{%
+\subsection{Logo oficial - fondo
+blanco}\label{logo-oficial---fondo-blanco}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{Logo\_hex }\OtherTok{\textless{}{-}}\NormalTok{ hexSticker}\SpecialCharTok{::}\FunctionTok{sticker}\NormalTok{(}
+    \DocumentationTok{\#\#Opciones de la imagen}
+    \AttributeTok{subplot              =}\NormalTok{ gg, }\CommentTok{\#la imagen que usaremos}
+    \CommentTok{\#s\_x                  = 1.00, s\_y = 1.25, \#posición relativa x e y de la imagen, 1=centro}
+    \CommentTok{\#s\_width              = 1.55, \#ancho de la imagen}
+    \CommentTok{\#s\_height             = 1.52, \#alto de la imagen}
+    
+    \AttributeTok{s\_x                  =} \FloatTok{0.90}\NormalTok{, }
+    \AttributeTok{s\_y                  =} \FloatTok{1.00}\NormalTok{, }\CommentTok{\#posición relativa x e y de la imagen, 1=centro}
+    \AttributeTok{s\_width              =} \FloatTok{2.5}\NormalTok{, }\CommentTok{\#ancho de la imagen}
+    \AttributeTok{s\_height             =} \FloatTok{2.5}\NormalTok{, }\CommentTok{\#alto de la imagen}
+
+    \DocumentationTok{\#\#Opciones para el título}
+    \AttributeTok{package              =} \StringTok{"InkaStats"}\NormalTok{, }\CommentTok{\#el nombre del logo}
+    \AttributeTok{p\_size               =} \DecValTok{40}\NormalTok{, }\CommentTok{\#Tamaño de la fuente}
+    \AttributeTok{p\_family             =} \StringTok{"roboto\_slab"}\NormalTok{, }\CommentTok{\#define fuente de letra}
+    \AttributeTok{p\_color              =}\NormalTok{ uvic\_black, }\CommentTok{\#para color de fuente}
+    \AttributeTok{p\_x                  =} \DecValTok{1}\NormalTok{, }\AttributeTok{p\_y =} \FloatTok{0.6}\NormalTok{, }\CommentTok{\#para posición del título}
+    
+    \DocumentationTok{\#\#Opciones generales}
+    \CommentTok{\# filename           = "Logo2 .png", \#fichero de salida}
+    \AttributeTok{dpi                  =} \DecValTok{600}\NormalTok{, }\CommentTok{\#Resolución}
+    
+    \DocumentationTok{\#\#Opciones del spotlight}
+    \AttributeTok{spotlight            =}\NormalTok{ F, }\CommentTok{\#agregar un brillo como reflector }
+    \AttributeTok{l\_x                  =} \DecValTok{1}\NormalTok{, }\CommentTok{\#posición relativa}
+    \AttributeTok{l\_y                  =} \FloatTok{1.2}\NormalTok{, }\CommentTok{\#posición relativa}
+    \AttributeTok{l\_alpha              =} \FloatTok{0.1}\NormalTok{, }\CommentTok{\#Transparencia del spotlight}
+    \AttributeTok{l\_width              =} \DecValTok{5}\NormalTok{, }\CommentTok{\#Amplitud del spotlight}
+    
+    \DocumentationTok{\#\#Fondo y borde}
+    \AttributeTok{h\_fill               =}\NormalTok{ uvic\_fondo, }\CommentTok{\#color de fondo}
+    \AttributeTok{h\_color              =}\NormalTok{ borde3, }\CommentTok{\#color de borde del hex}
+    \AttributeTok{h\_size               =} \FloatTok{1.2}\NormalTok{, }\CommentTok{\#ancho de borde}
+    \AttributeTok{white\_around\_sticker =}\NormalTok{ T, }\CommentTok{\#recortar el borde exterior del hex}
+    
+    \DocumentationTok{\#\#Opciones de la URL}
+    \AttributeTok{url                  =} \StringTok{"Data Science Solutions SAC"}\NormalTok{, }\CommentTok{\#lo que irá abajo          }
+    \AttributeTok{u\_color              =}\NormalTok{ uvic\_black, }\CommentTok{\#color de fuente}
+    \AttributeTok{u\_size               =} \DecValTok{7}\NormalTok{, }\CommentTok{\#tamaño de fuente}
+    \AttributeTok{u\_angle              =} \DecValTok{30}\NormalTok{, }\CommentTok{\#Ángulo de la URL}
+    \AttributeTok{u\_x                  =} \DecValTok{1}\NormalTok{, }
+    \AttributeTok{u\_y                  =} \FloatTok{0.05}\NormalTok{, }
+    \AttributeTok{u\_family             =} \StringTok{"roboto\_slab"}\NormalTok{, }
+    
+    \CommentTok{\# Save file}
+    \AttributeTok{filename             =} \StringTok{"../stickers\_png/logo{-}inkastats{-}official.png"}
+    
+\NormalTok{  )  }
+
+\CommentTok{\# save\_sticker("Logo\_InkaStats.png", }
+\CommentTok{\#              Logo\_hex, }
+\CommentTok{\#              dpi         = 600)}
+
+\CommentTok{\#Posición de la URL. Pos1: ang=30 x=0.3 y=1.5, Pos2: ang={-}30 x=1.25 y=1.75, Pos3: ang={-}90 x=0.2 y=1.45, Pos4: ang=90 x=1.8 y=0.85, Pos5: ang={-}30 x=0.5 y=0.35 Pos6: x=1 y=0.1}
+
+\FunctionTok{plot}\NormalTok{(Logo\_hex)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{code_hexsticker_files/figure-latex/unnamed-chunk-7-1.pdf}
+
+\hypertarget{logo-oficial---fondo-transparente}{%
+\subsection{Logo oficial - fondo
+transparente}\label{logo-oficial---fondo-transparente}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Extrayendo fondo}
+\NormalTok{logo }\OtherTok{\textless{}{-}} \FunctionTok{image\_read}\NormalTok{(}\StringTok{"../stickers\_png/logo{-}inkastats{-}official.png"}\NormalTok{)}
+
+\NormalTok{logo }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{image\_transparent}\NormalTok{(}\StringTok{\textquotesingle{}white\textquotesingle{}}\NormalTok{) }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{image\_write}\NormalTok{(}\StringTok{"../stickers\_png/logo{-}inkastats{-}official{-}transparent.png"}\NormalTok{, }\StringTok{"png"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{logos-no-oficiales}{%
+\subsection{Logos no oficiales}\label{logos-no-oficiales}}
+
+\hypertarget{con-otro-tipo-de-fondo}{%
+\subsubsection{con otro tipo de fondo}\label{con-otro-tipo-de-fondo}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Crear fondo, traslaparlo con quipu y guardarlo como objeto ggplo2}
+\FunctionTok{qplot}\NormalTok{(xpos, ypos, }\AttributeTok{geom =} \StringTok{"blank"}\NormalTok{) }\SpecialCharTok{+} 
+  \FunctionTok{annotation\_custom}\NormalTok{(quipu\_raster, }
+                    \AttributeTok{xmin =} \SpecialCharTok{{-}}\ConstantTok{Inf}\NormalTok{, }
+                    \AttributeTok{xmax =} \ConstantTok{Inf}\NormalTok{, }
+                    \AttributeTok{ymin =} \SpecialCharTok{{-}}\ConstantTok{Inf}\NormalTok{, }
+                    \AttributeTok{ymax =} \ConstantTok{Inf}\NormalTok{) }\SpecialCharTok{+} 
+  \FunctionTok{scale\_x\_continuous}\NormalTok{(}\AttributeTok{breaks =} \FunctionTok{seq}\NormalTok{(}\DecValTok{1}\NormalTok{, }\DecValTok{5}\NormalTok{, }\AttributeTok{by =} \DecValTok{1}\NormalTok{), }\AttributeTok{minor\_breaks =} \ConstantTok{NULL}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{scale\_y\_continuous}\NormalTok{(}\AttributeTok{breaks =} \FunctionTok{seq}\NormalTok{(}\DecValTok{0}\NormalTok{, }\DecValTok{25}\NormalTok{, }\AttributeTok{by =} \DecValTok{5}\NormalTok{), }\AttributeTok{minor\_breaks =} \ConstantTok{NULL}\NormalTok{) }\SpecialCharTok{+}
+  \CommentTok{\#theme(panel.background = element\_rect(fill = "\#EBEBEB")) {-}\textgreater{} gg}
+  \CommentTok{\#theme\_gray() {-}\textgreater{} gg2}
+  \FunctionTok{theme\_light}\NormalTok{() }\OtherTok{{-}\textgreater{}}\NormalTok{ gg2}
+  
+\NormalTok{Logo\_hex2 }\OtherTok{\textless{}{-}}\NormalTok{ hexSticker}\SpecialCharTok{::}\FunctionTok{sticker}\NormalTok{(}
+    \DocumentationTok{\#\#Opciones de la imagen}
+    \AttributeTok{subplot              =}\NormalTok{ gg2, }\CommentTok{\#la imagen que usaremos}
+    \CommentTok{\#s\_x                  = 1.00, s\_y = 1.25, \#posición relativa x e y de la imagen, 1=centro}
+    \CommentTok{\#s\_width              = 1.55, \#ancho de la imagen}
+    \CommentTok{\#s\_height             = 1.52, \#alto de la imagen}
+    
+    \AttributeTok{s\_x                  =} \FloatTok{0.90}\NormalTok{, }
+    \AttributeTok{s\_y                  =} \FloatTok{1.00}\NormalTok{, }\CommentTok{\#posición relativa x e y de la imagen, 1=centro}
+    \AttributeTok{s\_width              =} \FloatTok{2.5}\NormalTok{, }\CommentTok{\#ancho de la imagen}
+    \AttributeTok{s\_height             =} \FloatTok{2.5}\NormalTok{, }\CommentTok{\#alto de la imagen}
+
+    \DocumentationTok{\#\#Opciones para el título}
+    \AttributeTok{package              =} \StringTok{"InkaStats"}\NormalTok{, }\CommentTok{\#el nombre del logo}
+    \AttributeTok{p\_size               =} \DecValTok{40}\NormalTok{, }\CommentTok{\#Tamaño de la fuente}
+    \AttributeTok{p\_family             =} \StringTok{"roboto\_slab"}\NormalTok{, }\CommentTok{\#define fuente de letra}
+    \AttributeTok{p\_color              =}\NormalTok{ uvic\_black, }\CommentTok{\#para color de fuente}
+    \AttributeTok{p\_x                  =} \DecValTok{1}\NormalTok{, }\AttributeTok{p\_y =} \FloatTok{0.6}\NormalTok{, }\CommentTok{\#para posición del título}
+    
+    \DocumentationTok{\#\#Opciones generales}
+    \CommentTok{\# filename           = "Logo2 .png", \#fichero de salida}
+    \AttributeTok{dpi                  =} \DecValTok{600}\NormalTok{, }\CommentTok{\#Resolución}
+    
+    \DocumentationTok{\#\#Opciones del spotlight}
+    \AttributeTok{spotlight            =}\NormalTok{ F, }\CommentTok{\#agregar un brillo como reflector }
+    \AttributeTok{l\_x                  =} \DecValTok{1}\NormalTok{, }\CommentTok{\#posición relativa}
+    \AttributeTok{l\_y                  =} \FloatTok{1.2}\NormalTok{, }\CommentTok{\#posición relativa}
+    \AttributeTok{l\_alpha              =} \FloatTok{0.1}\NormalTok{, }\CommentTok{\#Transparencia del spotlight}
+    \AttributeTok{l\_width              =} \DecValTok{5}\NormalTok{, }\CommentTok{\#Amplitud del spotlight}
+    
+    \DocumentationTok{\#\#Fondo y borde}
+    \AttributeTok{h\_fill               =}\NormalTok{ uvic\_fondo, }\CommentTok{\#color de fondo}
+    \AttributeTok{h\_color              =}\NormalTok{ borde3, }\CommentTok{\#color de borde del hex}
+    \AttributeTok{h\_size               =} \FloatTok{1.2}\NormalTok{, }\CommentTok{\#ancho de borde}
+    \AttributeTok{white\_around\_sticker =}\NormalTok{ T, }\CommentTok{\#recortar el borde exterior del hex}
+    
+    \DocumentationTok{\#\#Opciones de la URL}
+    \AttributeTok{url                  =} \StringTok{"Data Science Solutions SAC"}\NormalTok{, }\CommentTok{\#lo que irá abajo          }
+    \AttributeTok{u\_color              =}\NormalTok{ uvic\_black, }\CommentTok{\#color de fuente}
+    \AttributeTok{u\_size               =} \DecValTok{7}\NormalTok{, }\CommentTok{\#tamaño de fuente}
+    \AttributeTok{u\_angle              =} \DecValTok{30}\NormalTok{, }\CommentTok{\#Ángulo de la URL}
+    \AttributeTok{u\_x                  =} \DecValTok{1}\NormalTok{, }
+    \AttributeTok{u\_y                  =} \FloatTok{0.05}\NormalTok{, }
+    \AttributeTok{u\_family             =} \StringTok{"roboto\_slab"}\NormalTok{, }
+    
+    \CommentTok{\# Save file}
+    \AttributeTok{filename             =} \StringTok{"../stickers\_png/logo{-}inkastats{-}noofficial{-}other.png"}
+    
+\NormalTok{  )  }
+
+\CommentTok{\# save\_sticker("Logo\_InkaStats.png", }
+\CommentTok{\#              Logo\_hex, }
+\CommentTok{\#              dpi         = 600)}
+
+\CommentTok{\#Posición de la URL. Pos1: ang=30 x=0.3 y=1.5, Pos2: ang={-}30 x=1.25 y=1.75, Pos3: ang={-}90 x=0.2 y=1.45, Pos4: ang=90 x=1.8 y=0.85, Pos5: ang={-}30 x=0.5 y=0.35 Pos6: x=1 y=0.1}
+
+\FunctionTok{plot}\NormalTok{(Logo\_hex2)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{code_hexsticker_files/figure-latex/unnamed-chunk-9-1.pdf}
+
+\hypertarget{con-efectos}{%
+\subsubsection{Con efectos}\label{con-efectos}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{logo }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{image\_charcoal}\NormalTok{() }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{image\_write}\NormalTok{(}\StringTok{"../stickers\_png/logo{-}inkastats{-}noofficial{-}charcoal.png"}\NormalTok{, }\StringTok{"png"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{logo }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{image\_implode}\NormalTok{() }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{image\_write}\NormalTok{(}\StringTok{"../stickers\_png/logo{-}inkastats{-}noofficial{-}implode.png"}\NormalTok{, }\StringTok{"png"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{logo }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{image\_oilpaint}\NormalTok{() }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{image\_write}\NormalTok{(}\StringTok{"../stickers\_png/logo{-}inkastats{-}noofficial{-}oilpaint.png"}\NormalTok{, }\StringTok{"png"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{logo }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{image\_edge}\NormalTok{() }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{image\_write}\NormalTok{(}\StringTok{"../stickers\_png/logo{-}inkastats{-}noofficial{-}edge.png"}\NormalTok{, }\StringTok{"png"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{gift-animados}{%
+\subsubsection{Gift animados}\label{gift-animados}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{logo1 }\OtherTok{\textless{}{-}} \FunctionTok{image\_read}\NormalTok{(}\StringTok{"../stickers\_png/logo{-}inkastats{-}noofficial{-}charcoal.png"}\NormalTok{)}
+\NormalTok{logo2 }\OtherTok{\textless{}{-}} \FunctionTok{image\_read}\NormalTok{(}\StringTok{"../stickers\_png/logo{-}inkastats{-}noofficial{-}oilpaint.png"}\NormalTok{)}
+\NormalTok{logos }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(logo1, logo2)}
+
+\NormalTok{(animation1 }\OtherTok{\textless{}{-}} \FunctionTok{image\_animate}\NormalTok{(logos, }\AttributeTok{fps =} \DecValTok{4}\NormalTok{)) }
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{code_hexsticker_files/figure-latex/unnamed-chunk-14-1.gif}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{animation1 }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{image\_write}\NormalTok{(}\StringTok{"../gifs/logo{-}charcoal{-}oilpaint.gif"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{logo1 }\OtherTok{\textless{}{-}} \FunctionTok{image\_read}\NormalTok{(}\StringTok{"../stickers\_png/logo{-}inkastats{-}noofficial{-}other.png"}\NormalTok{)}
+\NormalTok{logo2 }\OtherTok{\textless{}{-}} \FunctionTok{image\_read}\NormalTok{(}\StringTok{"../stickers\_png/logo{-}inkastats{-}official.png"}\NormalTok{)}
+\NormalTok{logos }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(logo1, logo2)}
+
+\NormalTok{(animation2 }\OtherTok{\textless{}{-}} \FunctionTok{image\_animate}\NormalTok{(logos, }\AttributeTok{fps =} \DecValTok{4}\NormalTok{)) }
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{code_hexsticker_files/figure-latex/unnamed-chunk-15-1.gif}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{animation2 }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{image\_write}\NormalTok{(}\StringTok{"../gifs/logo{-}official{-}nonofficial.gif"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{logo1 }\OtherTok{\textless{}{-}} \FunctionTok{image\_read}\NormalTok{(}\StringTok{"../stickers\_png/logo{-}inkastats{-}noofficial{-}other.png"}\NormalTok{)}
+\NormalTok{logo2 }\OtherTok{\textless{}{-}} \FunctionTok{image\_read}\NormalTok{(}\StringTok{"../stickers\_png/logo{-}inkastats{-}noofficial{-}oilpaint.png"}\NormalTok{)}
+\NormalTok{logo3 }\OtherTok{\textless{}{-}} \FunctionTok{image\_read}\NormalTok{(}\StringTok{"../stickers\_png/logo{-}inkastats{-}official.png"}\NormalTok{)}
+\NormalTok{logos }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(logo1, logo2, logo3)}
+
+\NormalTok{(animation2 }\OtherTok{\textless{}{-}} \FunctionTok{image\_animate}\NormalTok{(logos, }\AttributeTok{fps =} \DecValTok{4}\NormalTok{)) }
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{code_hexsticker_files/figure-latex/unnamed-chunk-16-1.gif}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{animation2 }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{image\_write}\NormalTok{(}\StringTok{"../gifs/logo{-}official{-}oilpaint{-}nonofficial.gif"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+
+\end{document}
