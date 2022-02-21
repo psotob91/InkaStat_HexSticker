@@ -1,10 +1,5 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
-<style>
-body {
-text-align: justify}
-</style>
-
 # InkaStat Hex-Sticker
 
 <a href="https://github.com/psotob/InkaStat_HexSticker"><img src="stickers_png/logo-inkastats-official.png" align="left" width="140" hspace="20" vspace="25"/></a>
@@ -46,19 +41,156 @@ logo representa un año que consideramos emblemático para la Estadística
 y la Ciencia de Datos. Siete fechas clave han sido registradas cuyo
 significado se describen a continuación:
 
-    #> Warning in kable_styling(., bootstrap_options = c("striped", "hover",
-    #> "condensed", : Please specify format in kable. kableExtra can customize either
-    #> HTML or LaTeX outputs. See https://haozhu233.github.io/kableExtra/ for details.
-
-| Hilo                                                                        | Trazo                                                                                                                                                                 | Año                                                       | Significado                                                                                                                                                                                                                                                                                                                                                                |
-|:----------------------------------------------------------------------------|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------|:----------------------------------------------------------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| <span style="     color: #2270B8 !important;text-align: c;">Azul</span>     | <span style="     color: #2270B8 !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: #2270B8 !important;text-align: c;">——</span> | <span style="     color: #2270B8 !important;">2022</span> | Fundación de InkaStats Data Science Solutions.                                                                                                                                                                                                                                                                                                                             |
-| <span style="     color: #C18D00 !important;text-align: c;">Amarillo</span> | <span style="     color: #C18D00 !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: #C18D00 !important;text-align: c;">——</span> | <span style="     color: #C18D00 !important;">1935</span> | El matemático, estadístico y biólogo Ronald Aylmer Fisher, basándose en su experiencia en el Rothamsted Research con datos de cultivos agrícolas, publica su libro ‘The Design of Experiments’, libro con el que no solo propone las bases estadísticas, sino también filosóficas, del Diseño de Experimentos.                                                             |
-| <span style="     color: #528235 !important;text-align: c;">Verde</span>    | <span style="     color: #528235 !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: #528235 !important;text-align: c;">——</span> | <span style="     color: #528235 !important;">1962</span> | El estadístico Jhon Wilder Tukey publica su artículo ‘The future of Data Analysis’, en el que se cuestiona el futuro de la Estadística como ciencia empírica dando así origen a la Ciencia de Datos como disciplina.                                                                                                                                                       |
-| <span style="     color: #67229B !important;text-align: c;">Morado</span>   | <span style="     color: #67229B !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: #67229B !important;text-align: c;">——</span> | <span style="     color: #67229B !important;">1979</span> | El estadístico Bradley Efron publica su artículo ‘Bootstrap Methods: Another Look at the Jackknife’, publicación que marca el inicio del Bootstrap como método de remuestreo, lo que lo lleva a ser considerado padre de la Estadística Computacional.                                                                                                                     |
-| <span style="     color: #424242 !important;text-align: c;">Gris</span>     | <span style="     color: #424242 !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: #424242 !important;text-align: c;">——</span> | <span style="     color: #424242 !important;">1910</span> | Conmemoración del fallecimiento de la enfermera, estadística y matemática Florence Nightingale, conocida por crear el Diagrama de Área Polar para contabilizar las muertes durante la Guerra de Crimea, lo que le significó ser elegida como miembro de la Sociedad Estadística de Inglaterra en 1858.                                                                     |
-| <span style="     color: #D49264 !important;text-align: c;">Naranja</span>  | <span style="     color: #D49264 !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: #D49264 !important;text-align: c;">——</span> | <span style="     color: #D49264 !important;">1966</span> | La investigadora Madeleine Guilbert publica su libro ‘Les fonctions des femmes dans l´industrie’, libro en el que, por primera vez, se utiliza la estadística aplicada para denunciar públicamente un problema social como la discriminación de género en los mercados laborales de la época basándose en la aplicación de la técnica de investigación social por encuesta |
-| <span style="     color: #8F0000 !important;text-align: c;">Rojo</span>     | <span style="     color: #8F0000 !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: #8F0000 !important;text-align: c;">——</span> | <span style="     color: #8F0000 !important;">1950</span> | El matemático e informático teórico Alan Mathison Turing publica lo que hoy se conoce como el Test de Turing, herramienta utilizada para medir la inteligencia de las máquinas, por lo que es considerado pionero en campos como la Inteligencia artificial y el Machine learning, componentes de la Ciencia de Datos                                                      |
+<table class="table table-striped table-hover table-condensed table-responsive" style="margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+Hilo
+</th>
+<th style="text-align:left;">
+Trazo
+</th>
+<th style="text-align:left;">
+Año
+</th>
+<th style="text-align:left;">
+Significado
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+<span style="     color: #2270B8 !important;text-align: c;">Azul</span>
+</td>
+<td style="text-align:left;">
+<span
+style="     color: #2270B8 !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: #2270B8 !important;text-align: c;">——</span>
+</td>
+<td style="text-align:left;">
+<span style="     color: #2270B8 !important;">2022</span>
+</td>
+<td style="text-align:left;">
+Fundación de InkaStats Data Science Solutions.
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+<span
+style="     color: #C18D00 !important;text-align: c;">Amarillo</span>
+</td>
+<td style="text-align:left;">
+<span
+style="     color: #C18D00 !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: #C18D00 !important;text-align: c;">——</span>
+</td>
+<td style="text-align:left;">
+<span style="     color: #C18D00 !important;">1935</span>
+</td>
+<td style="text-align:left;">
+El matemático, estadístico y biólogo Ronald Aylmer Fisher, basándose en
+su experiencia en el Rothamsted Research con datos de cultivos
+agrícolas, publica su libro ‘The Design of Experiments’, libro con el
+que no solo propone las bases estadísticas, sino también filosóficas,
+del Diseño de Experimentos.
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+<span style="     color: #528235 !important;text-align: c;">Verde</span>
+</td>
+<td style="text-align:left;">
+<span
+style="     color: #528235 !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: #528235 !important;text-align: c;">——</span>
+</td>
+<td style="text-align:left;">
+<span style="     color: #528235 !important;">1962</span>
+</td>
+<td style="text-align:left;">
+El estadístico Jhon Wilder Tukey publica su artículo ‘The future of Data
+Analysis’, en el que se cuestiona el futuro de la Estadística como
+ciencia empírica dando así origen a la Ciencia de Datos como disciplina.
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+<span
+style="     color: #67229B !important;text-align: c;">Morado</span>
+</td>
+<td style="text-align:left;">
+<span
+style="     color: #67229B !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: #67229B !important;text-align: c;">——</span>
+</td>
+<td style="text-align:left;">
+<span style="     color: #67229B !important;">1979</span>
+</td>
+<td style="text-align:left;">
+El estadístico Bradley Efron publica su artículo ‘Bootstrap Methods:
+Another Look at the Jackknife’, publicación que marca el inicio del
+Bootstrap como método de remuestreo, lo que lo lleva a ser considerado
+padre de la Estadística Computacional.
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+<span style="     color: #424242 !important;text-align: c;">Gris</span>
+</td>
+<td style="text-align:left;">
+<span
+style="     color: #424242 !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: #424242 !important;text-align: c;">——</span>
+</td>
+<td style="text-align:left;">
+<span style="     color: #424242 !important;">1910</span>
+</td>
+<td style="text-align:left;">
+Conmemoración del fallecimiento de la enfermera, estadística y
+matemática Florence Nightingale, conocida por crear el Diagrama de Área
+Polar para contabilizar las muertes durante la Guerra de Crimea, lo que
+le significó ser elegida como miembro de la Sociedad Estadística de
+Inglaterra en 1858.
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+<span
+style="     color: #D49264 !important;text-align: c;">Naranja</span>
+</td>
+<td style="text-align:left;">
+<span
+style="     color: #D49264 !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: #D49264 !important;text-align: c;">——</span>
+</td>
+<td style="text-align:left;">
+<span style="     color: #D49264 !important;">1966</span>
+</td>
+<td style="text-align:left;">
+La investigadora Madeleine Guilbert publica su libro ‘Les fonctions des
+femmes dans l´industrie’, libro en el que, por primera vez, se utiliza
+la estadística aplicada para denunciar públicamente un problema social
+como la discriminación de género en los mercados laborales de la época
+basándose en la aplicación de la técnica de investigación social por
+encuesta
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+<span style="     color: #8F0000 !important;text-align: c;">Rojo</span>
+</td>
+<td style="text-align:left;">
+<span
+style="     color: #8F0000 !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: #8F0000 !important;text-align: c;">——</span>
+</td>
+<td style="text-align:left;">
+<span style="     color: #8F0000 !important;">1950</span>
+</td>
+<td style="text-align:left;">
+El matemático e informático teórico Alan Mathison Turing publica lo que
+hoy se conoce como el Test de Turing, herramienta utilizada para medir
+la inteligencia de las máquinas, por lo que es considerado pionero en
+campos como la Inteligencia artificial y el Machine learning,
+componentes de la Ciencia de Datos
+</td>
+</tr>
+</tbody>
+</table>
 
 ## Hex-Wall de Hex-Stickers alternativos
 

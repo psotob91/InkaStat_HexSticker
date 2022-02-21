@@ -1,6 +1,6 @@
 ---
 output: github_document
-always_allow_html: yes
+always_allow_html: true
 ---
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
@@ -33,10 +33,9 @@ p_load(dplyr,
        labelled) # Loading packages
 ```
 
-```{=html}
+```{=md}
 <style>
-body {
-text-align: justify}
+body {text-align: justify}
 </style>
 ```
 
@@ -87,7 +86,7 @@ cs_dt$Año <- cell_spec(cs_dt$Año, color = cuadro$color)
 ```{r echo = FALSE}
 cs_dt %>% 
   dplyr::select(Hilo, Trazo, Año, Significado) %>% 
-  kbl(escape = F, format = "markdown") %>% 
+  kbl(escape = F, format = "html") %>% 
   # kable_paper("striped", full_width = FALSE)
   kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"))
 ```
