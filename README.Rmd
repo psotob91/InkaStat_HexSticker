@@ -5,14 +5,6 @@ always_allow_html: yes
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-```{=html}
-<style>
-body {
-text-align: justify}
-</style>
-```
-
-
 ```{r, include = FALSE}
 knitr::opts_chunk$set(
   collapse = TRUE,
@@ -37,6 +29,13 @@ p_load(dplyr,
        knitr, 
        kableExtra, 
        labelled) # Loading packages
+```
+
+```{=html}
+<style>
+body {
+text-align: justify}
+</style>
 ```
 
 # InkaStat Hex-Sticker
