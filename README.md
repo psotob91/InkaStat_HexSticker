@@ -41,7 +41,7 @@ logo representa un año que consideramos emblemático para la Estadística
 y la Ciencia de Datos. Siete fechas clave han sido registradas cuyo
 significado se describen a continuación:
 
-<table class="table table-striped table-hover table-condensed table-responsive" style="margin-left: auto; margin-right: auto;">
+<table class=" lightable-paper lightable-striped" style="font-family: &quot;Arial Narrow&quot;, arial, helvetica, sans-serif; width: auto !important; margin-left: auto; margin-right: auto;">
 <thead>
 <tr>
 <th style="text-align:left;">

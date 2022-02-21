@@ -79,16 +79,16 @@ cuadro <- data.frame(
 cs_dt <- cuadro
 cs_dt$Hilo <- cell_spec(cs_dt$Hilo, color = cuadro$color, align = "c")
 cs_dt$Trazo <- cell_spec(cs_dt$Trazo, color = cuadro$color, align = "c", background = cuadro$color)
-cs_dt$Año <- cell_spec(cs_dt$Año, color = cuadro$color)
+cs_dt$`Año` <- cell_spec(cs_dt$`Año`, color = cuadro$color)
 
 ```
 
 ```{r echo = FALSE}
 cs_dt %>% 
-  dplyr::select(Hilo, Trazo, Año, Significado) %>% 
+  dplyr::select(Hilo, Trazo, `Año`, Significado) %>% 
   kbl(escape = F, format = "html") %>% 
-  # kable_paper("striped", full_width = FALSE)
-  kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"))
+  kable_paper("striped", full_width = FALSE)
+  # kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"))
 ```
 
 ## Hex-Wall de Hex-Stickers alternativos
