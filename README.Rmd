@@ -11,6 +11,8 @@ knitr::opts_chunk$set(
   comment = "#>"
 )
 
+options(knitr.table.format = 'markdown') # Conserve kable() propierties in .md documents
+
 # Removing all objects including loaded libraries
 rm(list = ls(all = TRUE))
 
