@@ -87,7 +87,7 @@ cs_dt$Año <- cell_spec(cs_dt$Año, color = cuadro$color)
 ```{r echo = FALSE}
 cs_dt %>% 
   dplyr::select(Hilo, Trazo, Año, Significado) %>% 
-  kbl(escape = F) %>% 
+  kbl(escape = F, format = "markdown") %>% 
   # kable_paper("striped", full_width = FALSE)
   kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"))
 ```
