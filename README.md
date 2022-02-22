@@ -5,16 +5,15 @@
 
 # Hex-Sticker de InkaStats Data Science Solutions
 
-<a href="https://github.com/psotob/InkaStat_HexSticker"><img src="stickers_png/logo-inkastats-official.png" align="left" width="140" hspace="20" vspace="25"/></a>
+<a href="https://github.com/psotob/InkaStat_HexSticker"><img src="stickers_png/logo-inkastats-official.png" align="left" width="200" hspace="20" vspace="10"/></a>
 
-<br>
+<br> <br> <br> En este repositorio encontrarás el código para reproducir
+la creación del Hex-Sticker de **InkaStats Data Science Solutions** y la
+historia detrás del concepto artístico que inspiró el logo. Además,
+encontrarás algunas versiones alternativas de Hex-Stickers así como gif
+animados.
 
-En este repositorio encontrarás el código para reproducir la creación
-del Hex-Sticker de **InkaStats Data Science Solutions** y la historia
-detrás del concepto artístico que inspiró el logo. Además, encontrarás
-algunas versiones alternativas de Hex-Stickers así como gif animados.
-
-<br>
+<br> <br>
 
 ## Arte conceptual
 

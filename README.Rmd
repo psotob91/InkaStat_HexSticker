@@ -42,12 +42,14 @@ p_load(dplyr,
 
 # Hex-Sticker de InkaStats Data Science Solutions
 
-<a href="https://github.com/psotob/InkaStat_HexSticker"><img src="stickers_png/logo-inkastats-official.png" align="left" width="140" hspace="20" vspace="25"/></a>
+<a href="https://github.com/psotob/InkaStat_HexSticker"><img src="stickers_png/logo-inkastats-official.png" align="left" width="200" hspace="20" vspace="10"/></a>
 
 <br>
-
+<br>
+<br>
 En este repositorio encontrarás el código para reproducir la creación del Hex-Sticker de **InkaStats Data Science Solutions** y la historia detrás del concepto artístico que inspiró el logo. Además, encontrarás algunas versiones alternativas de Hex-Stickers así como gif animados.
 
+<br>
 <br>
 
 ## Arte conceptual
@@ -124,13 +126,17 @@ Por último, un par de gifs animados:
 
 
 ```{r echo = FALSE}
-gif1 <- image_read("gifs/logo-charcoal-oilpaint.gif")
-gif2 <- image_read("gifs/logo-official-nonofficial.gif")
-gif3 <- image_read("gifs/logo-official-oilpaint-nonofficial.gif")
+gif1 <- image_read("gifs/logo-charcoal-oilpaint.gif") %>% 
+  image_scale("200")
+gif2 <- image_read("gifs/logo-official-nonofficial.gif") %>% 
+  image_scale("200")
+gif3 <- image_read("gifs/logo-official-oilpaint-nonofficial.gif") %>% 
+  image_scale("200")
 
 new_gif <- image_append(c(gif1[1], gif2[1], gif3[1]), stack = FALSE)
-for (i in 2) {
-  combined <- image_append(c(gif1[i], gif2[i], gif3[i]), stack = FALSE)
+for (i in 2:3) {
+  j <- i - 1
+  combined <- image_append(c(gif1[j], gif2[j], gif3[i]), stack = FALSE)
   new_gif <- c(new_gif, combined)
 }
 
