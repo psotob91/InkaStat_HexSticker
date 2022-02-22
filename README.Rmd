@@ -103,7 +103,7 @@ cs_dt %>%
 
 ## Hex-Wall de Hex-Stickers alternativos
 
-Se muestra una pared de stickers alternativos generados con el paquete [hexwalll(https://github.com/mitchelloharawild/hexwall) de R. Los logos alternativos se encuentran 
+Se muestra una pared de stickers alternativos generados con el paquete [hexwalll](https://github.com/mitchelloharawild/hexwall) de R. Los logos alternativos se encuentran 
 
 ```{r echo=FALSE, message=FALSE}
 source("scripts/hexwall.R")
@@ -124,8 +124,7 @@ hexwall(path = "stickers_png/",
 
 ## Gifs animados de Hex-Stickers
 
-Por último, un par de gifs animados:
-
+Por último, un par de gifs animados creados con la librería `magick`:
 
 ```{r echo = FALSE}
 gif1 <- image_read("gifs/logo-charcoal-oilpaint.gif") %>% 
@@ -172,6 +171,10 @@ new_gif
     -   Ideación de arte conceptual.
 
     -   Creación del repositorio GitHub.
+    
+## Librerías utilizadas
+
+Analyses were conducted using the R Statistical language (version 4.1.2; R Core Team, 2021) on Windows 10 x64 (build 22000), using the packages ggplot2 (version 3.3.5; Wickham. ggplot2: Elegant Graphics for Data Analysis. Springer-Verlag New York, 2016.), tidyr (version 1.2.0; Hadley Wickham and Maximilian Girlich, 2022), readr (version 2.1.2; Hadley Wickham, Jim Hester and Jennifer Bryan, 2022), dplyr (version 1.0.8; Hadley Wickham et al., 2022), kableExtra (version 1.3.4; Hao Zhu, 2021), magick (version 2.7.3; Jeroen Ooms, 2021), labelled (version 2.9.0; Joseph Larmarange, 2021), tibble (version 3.1.6; Kirill Müller and Hadley Wickham, 2021), purrr (version 0.3.4; Lionel Henry and Hadley Wickham, 2020), report (version 0.5.1; Makowski et al., 2020), pacman (version 0.5.1; Rinker et al., 2017), magrittr (version 2.0.2; Stefan Milton Bache and Hadley Wickham, 2022), webshot (version 0.5.2; Winston Chang, 2019) and knitr (version 1.37; Yihui Xie, 2021).
 
 ## Referencias Bibliográficas
 
@@ -190,3 +193,35 @@ new_gif
 -   Ballesteros D., Blanco F. Mujeres que aplicaron la estadística para transformar el mundo: Florence Nightingale y Madelein Guilbert. VI Congreso internacional de Historia de la Estadística y de la Probabilidad. 2011. Disponible en: <https://eprints.ucm.es/16911/>
 
 -   Gonzales R. El test de Turing: dos mitos, un dogma. Revista de filosofía. 2007; 63:37-53. Disponible en: <http://dx.doi.org/10.4067/S0718-43602007000100003>
+
+- H. Wickham. ggplot2: Elegant Graphics for Data Analysis. Springer-Verlag New York, 2016.
+
+- Hadley Wickham and Maximilian Girlich (2022). tidyr: Tidy Messy Data. R package version 1.2.0. https://CRAN.R-project.org/package=tidyr
+
+- Hadley Wickham, Jim Hester and Jennifer Bryan (2022). readr: Read Rectangular Text Data. R package version 2.1.2. https://CRAN.R-project.org/package=readr
+
+- Hadley Wickham, Romain François, Lionel Henry and Kirill Müller (2022). dplyr: A Grammar of Data Manipulation. R package version 1.0.8. https://CRAN.R-project.org/package=dplyr
+
+- Hao Zhu (2021). kableExtra: Construct Complex Table with 'kable' and Pipe Syntax. R package version 1.3.4. https://CRAN.R-project.org/package=kableExtra
+
+- Jeroen Ooms (2021). magick: Advanced Graphics and Image-Processing in R. R package version 2.7.3. https://CRAN.R-project.org/package=magick
+
+- Joseph Larmarange (2021). labelled: Manipulating Labelled Data. R package version 2.9.0. https://CRAN.R-project.org/package=labelled
+
+- Kirill Müller and Hadley Wickham (2021). tibble: Simple Data Frames. R package version 3.1.6. https://CRAN.R-project.org/package=tibble
+
+- Lionel Henry and Hadley Wickham (2020). purrr: Functional Programming Tools. R package version 0.3.4. https://CRAN.R-project.org/package=purrr
+
+- Makowski, D., Ben-Shachar, M.S., Patil, I. & Lüdecke, D. (2020). Automated Results Reporting as a Practical Tool to Improve Reproducibility and Methodological Best Practices Adoption. CRAN. Available from https://github.com/easystats/report. doi: .
+
+- R Core Team (2021). R: A language and environment for statistical computing. R Foundation for Statistical Computing, Vienna, Austria. URL https://www.R-project.org/.
+
+- Rinker, T. W. & Kurkiewicz, D. (2017). pacman: Package Management for R. version 0.5.0. Buffalo, New York. http://github.com/trinker/pacman
+
+- Stefan Milton Bache and Hadley Wickham (2022). magrittr: A Forward-Pipe Operator for R. R package version 2.0.2. https://CRAN.R-project.org/package=magrittr
+
+- Winston Chang (2019). webshot: Take Screenshots of Web Pages. R package version 0.5.2. https://CRAN.R-project.org/package=webshot
+
+- Yihui Xie (2021). knitr: A General-Purpose Package for Dynamic Report Generation in R. R package version 1.37.
+
+
