@@ -1,7 +1,9 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# InkaStat Hex-Sticker
+> **Citación**: (Pendiente)
+
+# Hex-Sticker de InkaStats Data Science Solutions
 
 <a href="https://github.com/psotob/InkaStat_HexSticker"><img src="stickers_png/logo-inkastats-official.png" align="left" width="140" hspace="20" vspace="25"/></a>
 
@@ -49,32 +51,13 @@ significado se describen a continuación:
 Se puestra una pared de stickers alternativos generados con el paquete
 Hex-Wall.
 
-    #> 
-    #> Attaching package: 'purrr'
-    #> The following object is masked from 'package:magrittr':
-    #> 
-    #>     set_names
-
 ![](README_files/figure-gfm/unnamed-chunk-5-1.png)<!-- -->
 
 ## Gifs animados de Hex-Stickers
 
 Por último, un par de gifs animados:
 
-#### Gif 1:
-
-![Alt
-Text](https://github.com/psotob/InkaStat_HexSticker/blob/main/gifs/logo-charcoal-oilpaint.gif)
-
-#### Gif 2:
-
-![Alt
-Text](https://github.com/psotob/InkaStat_HexSticker/blob/main/gifs/logo-charcoal-oilpaint.gif)
-
-#### Gif 3:
-
-![Alt
-Text](https://github.com/psotob/InkaStat_HexSticker/blob/main/gifs/logo-official-oilpaint-nonofficial.gif)
+![](README_files/figure-gfm/unnamed-chunk-6-1.gif)<!-- -->
 
 ## Autores
 

@@ -38,7 +38,9 @@ p_load(dplyr,
 # webshot::install_phantomjs()
 ```
 
-# InkaStat Hex-Sticker
+> __Citación__: (Pendiente)
+
+# Hex-Sticker de InkaStats Data Science Solutions
 
 <a href="https://github.com/psotob/InkaStat_HexSticker"><img src="stickers_png/logo-inkastats-official.png" align="left" width="140" hspace="20" vspace="25"/></a>
 
@@ -99,7 +101,7 @@ cs_dt %>%
 
 Se puestra una pared de stickers alternativos generados con el paquete Hex-Wall.
 
-```{r echo = FALSE}
+```{r echo=FALSE, message=FALSE}
 source("scripts/hexwall.R")
 
 set.seed(12425)
@@ -120,18 +122,20 @@ hexwall(path = "stickers_png/",
 
 Por último, un par de gifs animados:
 
-#### Gif 1:
 
-![Alt Text](https://github.com/psotob/InkaStat_HexSticker/blob/main/gifs/logo-charcoal-oilpaint.gif)
+```{r echo = FALSE}
+gif1 <- image_read("gifs/logo-charcoal-oilpaint.gif")
+gif2 <- image_read("gifs/logo-official-nonofficial.gif")
+gif3 <- image_read("gifs/logo-official-oilpaint-nonofficial.gif")
 
-#### Gif 2:
+new_gif <- image_append(c(gif1[1], gif2[1], gif3[1]), stack = FALSE)
+for (i in 2) {
+  combined <- image_append(c(gif1[i], gif2[i], gif3[i]), stack = FALSE)
+  new_gif <- c(new_gif, combined)
+}
 
-![Alt Text](https://github.com/psotob/InkaStat_HexSticker/blob/main/gifs/logo-charcoal-oilpaint.gif)
-
-
-#### Gif 3:
-
-![Alt Text](https://github.com/psotob/InkaStat_HexSticker/blob/main/gifs/logo-official-oilpaint-nonofficial.gif)
+new_gif
+```
 
 ## Autores
 
