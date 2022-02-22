@@ -3,6 +3,9 @@
 
 > **Citación**: (Pendiente)
 
+[![License:
+CC0-1.0](https://licensebuttons.net/l/zero/1.0/80x15.png)](http://creativecommons.org/publicdomain/zero/1.0/)
+
 # Hex-Sticker de InkaStats Data Science Solutions
 
 <a href="https://github.com/psotob/InkaStat_HexSticker"><img src="stickers_png/logo-inkastats-official.png" align="left" width="200" hspace="20" vspace="10"/></a>
@@ -196,3 +199,7 @@ Chang, 2019) and knitr (version 1.37; Yihui Xie, 2021).
 
 -   Yihui Xie (2021). knitr: A General-Purpose Package for Dynamic
     Report Generation in R. R package version 1.37.
+
+## Licencia
+
+Creative Commons CC0 Public Domain
