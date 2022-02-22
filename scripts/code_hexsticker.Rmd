@@ -197,7 +197,6 @@ logo %>%
 plot(logo)
 ```
 
-
 ## Logos no oficiales
 
 ### Con fondo theme_light

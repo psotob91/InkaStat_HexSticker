@@ -24,20 +24,23 @@ p_unload() # Unloading all package except base
 library(pacman)
 
 p_load(dplyr, 
+       magrittr, 
        tibble, 
        tidyr, 
        readr, 
        ggplot2,
        knitr, 
        kableExtra, 
-       labelled) # Loading packages
+       labelled, 
+       magick, 
+       webshot) # Loading packages
+
+# webshot::install_phantomjs()
 ```
 
-```{=md}
 <style>
 body {text-align: justify}
 </style>
-```
 
 # InkaStat Hex-Sticker
 
@@ -47,7 +50,7 @@ body {text-align: justify}
 
 En este repositorio encontrarás el código para reproducir la creación del Hex-Sticker de **InkaStats Data Science Solutions** y la historia detrás del concepto artístico que inspiró el logo. Además, encontrarás algunas versiones alternativas de Hex-Stickers así como gif animados.
 
-<br> 
+<br>
 
 ## Arte conceptual
 
@@ -56,7 +59,6 @@ El `quipu` (del quechua `“quipuni”`, nudo en español) fue un sistema contab
 En **InkaStat** quisimos rendirle tributo a esta milenaria herramienta de manejo y análisis de datos diseñada por los Incas, por lo que hicimos un boceto a mano de este, mediante el programa [`Canva`](https://www.canva.com/es_419/), y lo antepusimos ante un fondo generado con el paquet [ggplot2](https://ggplot2.tidyverse.org/) de R usando el tema predefinido `theme_gray()`, lo que generó un plano cartesiano con aspecto de piedras de construcción incaica.
 
 Asimismo, no perdimos la oportunidad de utilizar al quipu como una base de datos y almacenar información relevante. Así, cada hilo de nuestro logo representa un año que consideramos emblemático para la Estadística y la Ciencia de Datos. Siete fechas clave han sido registradas cuyo significado se describen a continuación:
-
 
 ```{r, include = FALSE}
 cuadro <- data.frame(
@@ -83,65 +85,68 @@ cs_dt$`Año` <- cell_spec(cs_dt$`Año`, color = cuadro$color)
 
 ```
 
-```{r echo = FALSE}
+```{r include = FALSE}
 cs_dt %>% 
   dplyr::select(Hilo, Trazo, `Año`, Significado) %>% 
-  kbl(escape = F, format = "html") %>% 
-  kable_paper("striped", full_width = FALSE)
-  # kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"))
+  kbl(escape = F) %>% 
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive")) %>%
+  # as_image()
+  # kable_paper("striped", full_width = FALSE) %>% 
+  save_kable('tables/table_concept_art.png')
+  # kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive")) %>%
+  # as_image()
 ```
+
+![](tables/table_concept_art.png)
 
 ## Hex-Wall de Hex-Stickers alternativos
 
 
 
-
 ## Gifs animados de Hex-Stickers
-
 
 ## Autores
 
 -   [Anthony Romero](https://github.com/AnthonyRomeroC) ([anthony.romeromh\@gmail.com](mailto:anthony.romeromh@gmail.com){.email})
 
-    + Boceto y diseño gráfico del Quipu.
-  
-    + Co-Codeo de Hex-Sticker.
-  
-    + Redacción de arte conceptual.
-    
+    -   Boceto y diseño gráfico del Quipu.
+
+    -   Co-Codeo de Hex-Sticker.
+
+    -   Redacción de arte conceptual.
+
 -   [Christian Vasquez](https://github.com/cvasquezvel) ([cvasquezvel\@gmail.com](mailto:cvasquezvel@gmail.com){.email})
 
-    + Co-creación de nombre InkaStats.
-  
-    + Revisión y aporte con ideas al Hex-Sticker.
-  
-    + Co-ideación de arte conceptual
+    -   Co-creación de nombre InkaStats.
+
+    -   Revisión y aporte con ideas al Hex-Sticker.
+
+    -   Co-ideación de arte conceptual
 
 -   [Percy Soto-Becerra](https://github.com/psotob) ([percys1991\@gmail.com](mailto:percys1991@gmail.com){.email})
 
-    + Co-creación de nombre InkaStats.
+    -   Co-creación de nombre InkaStats.
 
-    + Codeo de Hex-Sticker.
-    
-    + Ideación de arte conceptual.
-    
-    + Creación del repositorio GitHub.
+    -   Codeo de Hex-Sticker.
 
-  
+    -   Ideación de arte conceptual.
+
+    -   Creación del repositorio GitHub.
+
 ## Referencias Bibliográficas
 
-- Wong Torres Z., Salcedo Guzmán L. Quipus: nudos numéricos y parlantes. Quipucamayoc, 2005; 12(24). Disponible en: https://doi.org/10.15381/quipu.v12i24.5435 
+-   Wong Torres Z., Salcedo Guzmán L. Quipus: nudos numéricos y parlantes. Quipucamayoc, 2005; 12(24). Disponible en: <https://doi.org/10.15381/quipu.v12i24.5435>
 
-- Macho Stadler M. El quipu: ¿algo más que un registro numérico? [Internet]. Cuaderno de cultura científica. 2015. Disponible en: https://culturacientifica.com/2015/09/16/el-quipu-algo-mas-que-un-registro-numerico/
+-   Macho Stadler M. El quipu: ¿algo más que un registro numérico? [Internet]. Cuaderno de cultura científica. 2015. Disponible en: <https://culturacientifica.com/2015/09/16/el-quipu-algo-mas-que-un-registro-numerico/>
 
-- Ronald Fisher. Wikipedia, La enciclopedia libre. 2022. Disponible en: https://es.wikipedia.org/wiki/Ronald_Fisher
+-   Ronald Fisher. Wikipedia, La enciclopedia libre. 2022. Disponible en: <https://es.wikipedia.org/wiki/Ronald_Fisher>
 
-- Tukey J. The Future of Data Analysis. The Annals of Mathematical Statistics. 1962; 33(1):1–67. doi:10.1214/aoms/1177704711
+-   Tukey J. The Future of Data Analysis. The Annals of Mathematical Statistics. 1962; 33(1):1–67. <doi:10.1214/aoms/1177704711>
 
-- Bradley E. Bootstrap Methods: Another Look at the Jackknife. The Annals of Statistics. 1979; 7(1):1-26. Disponible en: https://www.jstor.org/stable/2958830
+-   Bradley E. Bootstrap Methods: Another Look at the Jackknife. The Annals of Statistics. 1979; 7(1):1-26. Disponible en: <https://www.jstor.org/stable/2958830>
 
-- Young P, Hortis De Smith V, Chambi M, Finn B. Florence Nightingale (1820-1910), a 101 años de su fallecimiento. Rev. méd. Chile. 2011; 139(6):807-813. Disponible en: http://dx.doi.org/10.4067/S0034-98872011000600017 
+-   Young P, Hortis De Smith V, Chambi M, Finn B. Florence Nightingale (1820-1910), a 101 años de su fallecimiento. Rev. méd. Chile. 2011; 139(6):807-813. Disponible en: <http://dx.doi.org/10.4067/S0034-98872011000600017>
 
-- Ballesteros D., Blanco F. Mujeres que aplicaron la estadística para transformar el mundo: Florence Nightingale y Madelein Guilbert. VI Congreso internacional de Historia de la Estadística y de la Probabilidad. 2011. Disponible en: https://eprints.ucm.es/16911/
+-   Ballesteros D., Blanco F. Mujeres que aplicaron la estadística para transformar el mundo: Florence Nightingale y Madelein Guilbert. VI Congreso internacional de Historia de la Estadística y de la Probabilidad. 2011. Disponible en: <https://eprints.ucm.es/16911/>
 
-- Gonzales R. El test de Turing: dos mitos, un dogma. Revista de filosofía. 2007; 63:37-53. Disponible en: http://dx.doi.org/10.4067/S0718-43602007000100003
+-   Gonzales R. El test de Turing: dos mitos, un dogma. Revista de filosofía. 2007; 63:37-53. Disponible en: <http://dx.doi.org/10.4067/S0718-43602007000100003>
