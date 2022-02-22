@@ -317,10 +317,12 @@ logo %>%
 ```{r}
 logo %>% 
   image_edge() %>% 
+  image_transparent('black') %>% 
   image_write("../stickers_png/logo-inkastats-noofficial-edge.png", "png")
 
 logo %>% 
   image_edge() %>% 
+  image_transparent('black') %>% 
   plot()
 ```
 

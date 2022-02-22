@@ -38,10 +38,6 @@ p_load(dplyr,
 # webshot::install_phantomjs()
 ```
 
-<style>
-body {text-align: justify}
-</style>
-
 # InkaStat Hex-Sticker
 
 <a href="https://github.com/psotob/InkaStat_HexSticker"><img src="stickers_png/logo-inkastats-official.png" align="left" width="140" hspace="20" vspace="25"/></a>
@@ -92,7 +88,7 @@ cs_dt %>%
   kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive")) %>%
   # as_image()
   # kable_paper("striped", full_width = FALSE) %>% 
-  save_kable('tables/table_concept_art.png')
+  save_kable('tables/table_concept_art.png', density = 900)
   # kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive")) %>%
   # as_image()
 ```
@@ -101,9 +97,41 @@ cs_dt %>%
 
 ## Hex-Wall de Hex-Stickers alternativos
 
+Se puestra una pared de stickers alternativos generados con el paquete Hex-Wall.
 
+```{r echo = FALSE}
+source("scripts/hexwall.R")
+
+set.seed(12425)
+
+hexwall(path = "stickers_png/",
+        sticker_row_size = 4, # if getting error about "image magick" try changing #
+        sticker_width = 200,
+        remove_small = TRUE,
+        total_stickers = NULL,
+        remove_size = TRUE,
+        coords = NULL,
+        scale_coords = TRUE,
+        sort_mode = "random"
+)
+```
 
 ## Gifs animados de Hex-Stickers
+
+Por último, un par de gifs animados:
+
+#### Gif 1:
+
+![Alt Text](https://github.com/psotob/InkaStat_HexSticker/blob/main/gifs/logo-charcoal-oilpaint.gif)
+
+#### Gif 2:
+
+![Alt Text](https://github.com/psotob/InkaStat_HexSticker/blob/main/gifs/logo-charcoal-oilpaint.gif)
+
+
+#### Gif 3:
+
+![Alt Text](https://github.com/psotob/InkaStat_HexSticker/blob/main/gifs/logo-official-oilpaint-nonofficial.gif)
 
 ## Autores
 
