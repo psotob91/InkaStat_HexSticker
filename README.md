@@ -3,6 +3,8 @@
 
 > **Citación**: (Pendiente)
 
+<a href="https://zenodo.org/badge/latestdoi/461208380"><img src="https://zenodo.org/badge/461208380.svg" align="left" alt="DOI"></a>
+
 [![License:
 CC0-1.0](https://licensebuttons.net/l/zero/1.0/80x15.png)](http://creativecommons.org/publicdomain/zero/1.0/)
 
