@@ -9,9 +9,9 @@ gc()
 
 if (!require("pacman")) {install.packages("pacman")}
 
-library(pacman)
+p_unload("all") # Unloading all package except base
 
-p_unload() # Unloading all package except base
+library(pacman)
 
 p_load(
   tidyverse, 

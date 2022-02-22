@@ -10,7 +10,7 @@
 <br> <br> <br> En este repositorio encontrarás el código para reproducir
 la creación del Hex-Sticker de **InkaStats Data Science Solutions** y la
 historia detrás del concepto artístico que inspiró el logo. Además,
-encontrarás algunas versiones alternativas de Hex-Stickers así como gif
+encontrarás algunas versiones alternativas de Hex-Stickers así como gifs
 animados.
 
 <br> <br>
@@ -29,9 +29,9 @@ como una `base de datos`, también puede considerarsele como la
 representación más antigua de la `Estadística`y `Ciencia de Datos` que
 tenemos en América Latina.
 
-En **InkaStat** quisimos rendirle tributo a esta milenaria herramienta
-de manejo y análisis de datos diseñada por los Incas, por lo que hicimos
-un boceto a mano de este, mediante el programa
+En **InkaStats Data Science Solutions** quisimos rendirle tributo a esta
+milenaria herramienta de manejo y análisis de datos diseñada por los
+Incas, por lo que hicimos un boceto a mano de este, mediante el programa
 [`Canva`](https://www.canva.com/es_419/), y lo antepusimos ante un fondo
 generado con el paquet [ggplot2](https://ggplot2.tidyverse.org/) de R
 usando el tema predefinido `theme_gray()`, lo que generó un plano

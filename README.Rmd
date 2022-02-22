@@ -18,8 +18,9 @@ rm(list = ls(all = TRUE))
 
 # Installing and loading packages
 if (!require("pacman")) install.packages("pacman")
+if (!require("easystats")) install.packages("easystats", repos = "https://easystats.r-universe.dev")
 
-p_unload() # Unloading all package except base
+p_unload("all") # Unloading all package except base
 
 library(pacman)
 
@@ -33,7 +34,8 @@ p_load(dplyr,
        kableExtra, 
        labelled, 
        magick, 
-       webshot) # Loading packages
+       webshot, 
+       report) # Loading packages
 
 # webshot::install_phantomjs()
 ```
@@ -47,7 +49,7 @@ p_load(dplyr,
 <br>
 <br>
 <br>
-En este repositorio encontrarás el código para reproducir la creación del Hex-Sticker de **InkaStats Data Science Solutions** y la historia detrás del concepto artístico que inspiró el logo. Además, encontrarás algunas versiones alternativas de Hex-Stickers así como gif animados.
+En este repositorio encontrarás el código para reproducir la creación del Hex-Sticker de **InkaStats Data Science Solutions** y la historia detrás del concepto artístico que inspiró el logo. Además, encontrarás algunas versiones alternativas de Hex-Stickers así como gifs animados.
 
 <br>
 <br>
@@ -56,7 +58,7 @@ En este repositorio encontrarás el código para reproducir la creación del Hex
 
 El `quipu` (del quechua `“quipuni”`, nudo en español) fue un sistema contable elaborado y utilizado por los administradores del imperio Inca, los quipucamayoc, a principios del siglo XVI. Consiste en un cordón grueso en la parte superior del que penden numerosos hilos verticales delgados con nudos de diferentes estilos y colores que representaban datos relacionados con la contabilidad tributaria incaica, el registro de los censos, posesión de tierras, el trabajo, la producción, entre diversos tipos de datos numéricos. Así, el `quipu` no solo funcionaba como una `base de datos`, también puede considerarsele como la representación más antigua de la `Estadística`y `Ciencia de Datos` que tenemos en América Latina.
 
-En **InkaStat** quisimos rendirle tributo a esta milenaria herramienta de manejo y análisis de datos diseñada por los Incas, por lo que hicimos un boceto a mano de este, mediante el programa [`Canva`](https://www.canva.com/es_419/), y lo antepusimos ante un fondo generado con el paquet [ggplot2](https://ggplot2.tidyverse.org/) de R usando el tema predefinido `theme_gray()`, lo que generó un plano cartesiano con aspecto de piedras de construcción incaica.
+En **InkaStats Data Science Solutions** quisimos rendirle tributo a esta milenaria herramienta de manejo y análisis de datos diseñada por los Incas, por lo que hicimos un boceto a mano de este, mediante el programa [`Canva`](https://www.canva.com/es_419/), y lo antepusimos ante un fondo generado con el paquete [`ggplot2`](https://ggplot2.tidyverse.org/) de R usando el tema predefinido `theme_gray()`, lo que generó un plano cartesiano con aspecto de piedras de construcción incaica.
 
 Asimismo, no perdimos la oportunidad de utilizar al quipu como una base de datos y almacenar información relevante. Así, cada hilo de nuestro logo representa un año que consideramos emblemático para la Estadística y la Ciencia de Datos. Siete fechas clave han sido registradas cuyo significado se describen a continuación:
 
@@ -101,7 +103,7 @@ cs_dt %>%
 
 ## Hex-Wall de Hex-Stickers alternativos
 
-Se puestra una pared de stickers alternativos generados con el paquete Hex-Wall.
+Se muestra una pared de stickers alternativos generados con el paquete [hexwalll(https://github.com/mitchelloharawild/hexwall) de R. Los logos alternativos se encuentran 
 
 ```{r echo=FALSE, message=FALSE}
 source("scripts/hexwall.R")
