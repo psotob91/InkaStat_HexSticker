@@ -1,7 +1,10 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-> **Citación**: (Pendiente)
+> **Citación**: Soto-Becerra P, Anthony Romero-Cerdán GA, Vásquez
+> Velasco CRA. Hex-Sticker de InkaStats Data Science Solutions
+> \[Internet\]. Zenodo; 2022 \[cited 2022 Feb 22\]. Available from:
+> 110.5281/zenodo.6230964.
 
 <a href="https://zenodo.org/badge/latestdoi/461208380"><img src="https://zenodo.org/badge/461208380.svg" align="left" alt="DOI"></a>
 
@@ -97,20 +100,21 @@ Por último, un par de gifs animados creados con la librería `magick`:
 
 ## Librerías utilizadas
 
-Analyses were conducted using the R Statistical language (version 4.1.2;
-R Core Team, 2021) on Windows 10 x64 (build 22000), using the packages
-ggplot2 (version 3.3.5; Wickham. ggplot2: Elegant Graphics for Data
-Analysis. Springer-Verlag New York, 2016.), tidyr (version 1.2.0; Hadley
-Wickham and Maximilian Girlich, 2022), readr (version 2.1.2; Hadley
-Wickham, Jim Hester and Jennifer Bryan, 2022), dplyr (version 1.0.8;
-Hadley Wickham et al., 2022), kableExtra (version 1.3.4; Hao Zhu, 2021),
-magick (version 2.7.3; Jeroen Ooms, 2021), labelled (version 2.9.0;
-Joseph Larmarange, 2021), tibble (version 3.1.6; Kirill Müller and
-Hadley Wickham, 2021), purrr (version 0.3.4; Lionel Henry and Hadley
-Wickham, 2020), report (version 0.5.1; Makowski et al., 2020), pacman
-(version 0.5.1; Rinker et al., 2017), magrittr (version 2.0.2; Stefan
-Milton Bache and Hadley Wickham, 2022), webshot (version 0.5.2; Winston
-Chang, 2019) and knitr (version 1.37; Yihui Xie, 2021).
+El código fuente para crear los hexstickers, hexwall y gifs animados fue
+escrito en el lenguaje estadístico R (version 4.1.2; R Core Team, 2021)
+on Windows 10 x64 (build 22000), usando los paquetes ggplot2 (version
+3.3.5; Wickham. ggplot2: Elegant Graphics for Data Analysis.
+Springer-Verlag New York, 2016.), tidyr (version 1.2.0; Hadley Wickham
+and Maximilian Girlich, 2022), readr (version 2.1.2; Hadley Wickham, Jim
+Hester and Jennifer Bryan, 2022), dplyr (version 1.0.8; Hadley Wickham
+et al., 2022), kableExtra (version 1.3.4; Hao Zhu, 2021), magick
+(version 2.7.3; Jeroen Ooms, 2021), labelled (version 2.9.0; Joseph
+Larmarange, 2021), tibble (version 3.1.6; Kirill Müller and Hadley
+Wickham, 2021), purrr (version 0.3.4; Lionel Henry and Hadley Wickham,
+2020), report (version 0.5.1; Makowski et al., 2020), pacman (version
+0.5.1; Rinker et al., 2017), magrittr (version 2.0.2; Stefan Milton
+Bache and Hadley Wickham, 2022), webshot (version 0.5.2; Winston Chang,
+2019) and knitr (version 1.37; Yihui Xie, 2021).
 
 ## Referencias Bibliográficas
 
