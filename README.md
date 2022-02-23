@@ -1,10 +1,10 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-> **Citación**: Soto-Becerra P, Anthony Romero-Cerdán, Vásquez
-> Velasco CRA. Hex-Sticker de InkaStats Data Science Solutions
-> \[Internet\]. Zenodo; 2022 \[cited 2022 Feb 22\]. Available from:
-> 110.5281/zenodo.6230964.
+> **Citación**: Citación: Percy Soto-Becerra, Anthony Romero-Cerdán,
+> Christian Vásquez Velasco. Hex-Sticker de InkaStats Data Science
+> Solutions \[Internet\]. Zenodo; 2022 \[cited 2022 Feb 22\]. Available
+> from: 110.5281/zenodo.6230964.
 
 <a href="https://zenodo.org/badge/latestdoi/461208380"><img src="https://zenodo.org/badge/461208380.svg" align="left" alt="DOI"></a>
 
@@ -13,7 +13,7 @@ CC0-1.0](https://licensebuttons.net/l/zero/1.0/80x15.png)](http://creativecommon
 
 # Hex-Sticker de InkaStats Data Science Solutions
 
-<a href="https://github.com/psotob/InkaStat_HexSticker"><img src="stickers_png/logo-inkastats-official.png" align="left" width="200" hspace="20" vspace="10"/></a>
+<a href="https://github.com/psotob/InkaStat_HexSticker/blob/main/stickers_png/logo-inkastats-official.png"><img src="stickers_png/logo-inkastats-official.png" align="left" width="200" hspace="20" vspace="10"/></a>
 
 <br> <br> <br> En este repositorio encontrarás el código para reproducir
 la creación del Hex-Sticker de **InkaStats Data Science Solutions** y la
@@ -56,14 +56,17 @@ significado se describen a continuación:
 ## Hex-Wall de Hex-Stickers alternativos
 
 Se muestra una pared de stickers alternativos generados con el paquete
-[hexwalll](https://github.com/mitchelloharawild/hexwall) de R. Los logos
-alternativos se encuentran
+[`hexwalll`](https://github.com/mitchelloharawild/hexwall) de R. Los
+logos alternativos se encuentra
+[aquí](https://github.com/psotob/InkaStat_HexSticker/tree/main/stickers_png).
 
 ![](README_files/figure-gfm/unnamed-chunk-5-1.png)<!-- -->
 
 ## Gifs animados de Hex-Stickers
 
-Por último, un par de gifs animados creados con la librería `magick`:
+Por último, algunos gifs animados creados con la librería
+[`magick`](https://github.com/ropensci/magick), los cuales se encuentran
+[aquí](https://github.com/psotob/InkaStat_HexSticker/tree/main/gifs):
 
 ![](README_files/figure-gfm/unnamed-chunk-6-1.gif)<!-- -->
 
