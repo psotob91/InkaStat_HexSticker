@@ -9,7 +9,6 @@ message: >-
 type: software
 authors:
   - given-names: Percy
-    name-particle: Percy
     family-names: Soto-Becerra
     email: percys1991@gmail.com
     affiliation: InkaStats Data Science Solutions
