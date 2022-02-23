@@ -35,8 +35,8 @@ identifiers:
     description: The concept DOI of the work.
   - type: url
     value: >-
-      https://github.com/psotob/InkaStat_HexSticker/releases/tag/v1.0.0
-    description: The GitHub release URL of tag 1.1.0.
+      https://github.com/psotob/InkaStat_HexSticker/releases/tag/v4.0.0
+    description: The GitHub release URL of tag 4.0.0.
 repository-code: >-
-  https://github.com/psotob/InkaStat_HexSticker/releases/tag/v1.0.0
+  https://github.com/psotob/InkaStat_HexSticker/releases/tag/v4.0.0
 license: CC0-1.0
