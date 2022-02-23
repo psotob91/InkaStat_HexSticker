@@ -1,7 +1,7 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-> **Citación**: Soto-Becerra P, Anthony Romero-Cerdán GA, Vásquez
+> **Citación**: Soto-Becerra P, Anthony Romero-Cerdán, Vásquez
 > Velasco CRA. Hex-Sticker de InkaStats Data Science Solutions
 > \[Internet\]. Zenodo; 2022 \[cited 2022 Feb 22\]. Available from:
 > 110.5281/zenodo.6230964.
