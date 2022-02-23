@@ -10,16 +10,19 @@ type: software
 authors:
   - given-names: Percy
     family-names: Soto-Becerra
+    name-particle: Percy
     email: percys1991@gmail.com
     affiliation: InkaStats Data Science Solutions
     orcid: 'https://orcid.org/0000-0001-5332-9254'
   - given-names: George Anthony
     family-names: Romero-Cerdán
+    name-particle: Anthony
     email: anthony.romeromh@gmail.com
     affiliation: InkaStats Data Science Solutions
     orcid: 'https://orcid.org/0000-0001-6342-647X'
   - given-names: Christian Richard Alberto
     family-names: Vásquez Velasco
+    name-particle: Christian
     email: cvasquezvel@gmail.com
     affiliation: InkaStats Data Science Solutions
   - {}
